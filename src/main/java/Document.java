@@ -29,7 +29,7 @@ public class Document {
             Character c = characters.get(i);
             TextStyle style = c.getStyle();
 
-            writeFile.print(c.getCharacter() + ": " + style.getTextFont() + ", "
+            writeFile.println(c.getCharacter() + ": " + style.getTextFont() + ", "
             + style.getTextColor() + ", " + style.getTextSize());
 
         }
