@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTextStyle {
 
@@ -21,6 +21,17 @@ public class TestTextStyle {
         assertEquals(expectedFont,actualFont);
         assertEquals(expectedColor,actualColor);
         assertEquals(expectedSize,actualSize);
+    }
+
+    @Test
+    public void TestTextStyleFactoryReuse(){
+        TextStyleFactory styleFactory = new TextStyleFactory();
+
+        TextStyle actual = styleFactory.getStyle("Arial","Red",12);
+        TextStyle expected = styleFactory.getStyle("Arial","Red",12);
+
+        assertSame(expected,actual);
+
     }
 
 
