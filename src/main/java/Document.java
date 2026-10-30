@@ -1,6 +1,8 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Document {
 
@@ -33,5 +35,37 @@ public class Document {
         }
 
         writeFile.close();
+    }
+
+    public void loadDocument(String fileName) throws FileNotFoundException {
+
+        Scanner readFile = new Scanner(new File(fileName));
+
+        TextStyleFactory styleFactory = new TextStyleFactory();
+
+        while ( readFile.hasNextLine() ) {
+
+            String line = readFile.nextLine();
+
+            String[] parts = line.split(",");
+
+            String[] firstPart = parts[0].split(":");
+
+            char letter = firstPart[0].trim().charAt(0);
+
+            String font = firstPart[1].trim();
+
+            String color = parts[1].trim();
+
+            int size = Integer.parseInt(parts[2].trim());
+
+            TextStyle style = styleFactory.getStyle(font, color, size);
+
+            Character character = new Character(letter, style);
+
+            addCharacter(character);
+        }
+
+        readFile.close();
     }
 }

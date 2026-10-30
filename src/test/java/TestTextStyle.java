@@ -141,7 +141,7 @@ public class TestTextStyle {
     }
 
     @Test
-    public void testLoadDocument() {
+    public void testLoadDocument() throws FileNotFoundException {
 
         Document document = new Document();
 
