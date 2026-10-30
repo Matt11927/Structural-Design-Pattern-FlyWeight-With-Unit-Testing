@@ -34,5 +34,15 @@ public class TestTextStyle {
 
     }
 
+    @Test
+    public void TestTextStyleFactoryDifferent(){
+        TextStyleFactory styleFactory = new TextStyleFactory();
+
+        TextStyle actual = styleFactory.getStyle("Arial","Red",12);
+        TextStyle expected = styleFactory.getStyle("Verdana ","Black ",16);
+
+        assertNotSame(expected,actual);
+    }
+
 
 }
