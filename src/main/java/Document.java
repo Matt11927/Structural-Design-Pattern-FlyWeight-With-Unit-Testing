@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Document {
@@ -15,5 +17,21 @@ public class Document {
             counter++;
         }
         return counter;
+    }
+
+    public void saveDocument(String file) throws FileNotFoundException {
+        PrintWriter writeFile = new PrintWriter(file);
+
+        for ( int i = 0; i < characters.size(); i++){
+
+            Character c = characters.get(i);
+            TextStyle style = c.getStyle();
+
+            writeFile.print(c.getCharacter() + ": " + style.getTextFont() + ", "
+            + style.getTextColor() + ", " + style.getTextSize());
+
+        }
+
+        writeFile.close();
     }
 }

@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import javax.print.Doc;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -123,7 +124,7 @@ public class TestTextStyle {
     }
 
     @Test
-    public void testSaveDocument() {
+    public void testSaveDocument() throws FileNotFoundException {
 
         Document document = new Document();
 
@@ -131,7 +132,7 @@ public class TestTextStyle {
 
         document.addCharacter(new Character('H', style));
 
-        document.save("characterDocument.txt");
+        document.saveDocument("characterDocument.txt");
 
         File file = new File("characterDocument.txt");
 
