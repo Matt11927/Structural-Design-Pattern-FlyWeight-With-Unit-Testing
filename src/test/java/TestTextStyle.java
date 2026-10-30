@@ -50,7 +50,7 @@ public class TestTextStyle {
 
         Character c = new Character('H',style);
 
-        char actualChar = c.getCharacter;
+        char actualChar = c.getCharacter();
         TextStyle actualCharStyle = c.getStyle();
 
         char expectedChar = 'H';
