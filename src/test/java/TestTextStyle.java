@@ -96,6 +96,31 @@ public class TestTextStyle {
 
     }
 
+    @Test
+    public void testDocumentRetrievesCharactersInOrder() {
+
+        Document document = new Document();
+
+        TextStyle style = new TextStyle("Arial", "Red", 12);
+
+        document.addCharacter(new Character('H', style));
+        document.addCharacter(new Character('e', style));
+        document.addCharacter(new Character('l', style));
+
+        char actualFirstIndex = document.getCharacter(0).getCharacter();
+        char actualSecondIndex = document.getCharacter(1).getCharacter();
+        char actualThirdIndex = document.getCharacter(2).getCharacter();
+
+        char expectedFirstIndex = 'H';
+        char expectedSecondIndex = 'e';
+        char expectedThirdIndex = 'l';
+
+        assertEquals(expectedFirstIndex, actualFirstIndex);
+        assertEquals(expectedSecondIndex,actualSecondIndex);
+        assertEquals(expectedThirdIndex,actualThirdIndex);
+    }
+
+
 
 
 
