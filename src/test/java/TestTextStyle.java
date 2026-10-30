@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import javax.print.Doc;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTextStyle {
@@ -58,6 +60,21 @@ public class TestTextStyle {
 
         assertEquals(expectedChar,actualChar);
         assertSame(expectedCharStyle,actualCharStyle);
+    }
+
+    @Test
+    public void testDocumentAddCharacters(){
+        Document document = new Document();
+        TextStyle style = new TextStyle( "Arial","Red",12 );
+        Character c = new Character('H',style);
+
+        document.addCharacter(c);
+
+         Character actual = document.getCharacter(0);
+         Character expected = c;
+
+         assertSame(expected,actual);
+
     }
 
 
