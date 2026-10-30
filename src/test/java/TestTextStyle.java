@@ -44,5 +44,21 @@ public class TestTextStyle {
         assertNotSame(expected,actual);
     }
 
+    @Test
+    public void TestCharacter(){
+        TextStyle style = new TextStyle( "Arial","Red",12 );
+
+        Character c = new Character('H',style);
+
+        char actualChar = c.getCharacter;
+        TextStyle actualCharStyle = c.getStyle();
+
+        char expectedChar = 'H';
+        TextStyle expectedCharStyle = style;
+
+        assertEquals(expectedChar,actualChar);
+        assertSame(expectedCharStyle,actualCharStyle);
+    }
+
 
 }
