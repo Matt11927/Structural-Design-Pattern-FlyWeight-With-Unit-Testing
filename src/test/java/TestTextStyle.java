@@ -140,6 +140,18 @@ public class TestTextStyle {
 
     }
 
+    @Test
+    public void testLoadDocument() {
+
+        Document document = new Document();
+
+        document.loadDocument("characterDocument.txt");
+
+        char actual = document.getCharacter(0).getCharacter();
+        char expected = 'H';
+
+        assertEquals(expected, actual);
+    }
 
 
 
