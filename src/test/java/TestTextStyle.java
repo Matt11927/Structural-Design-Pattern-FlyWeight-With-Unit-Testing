@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.print.Doc;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTextStyle {
@@ -120,6 +122,22 @@ public class TestTextStyle {
         assertEquals(expectedThirdIndex,actualThirdIndex);
     }
 
+    @Test
+    public void testSaveDocument() {
+
+        Document document = new Document();
+
+        TextStyle style = new TextStyle("Arial","Red",12);
+
+        document.addCharacter(new Character('H', style));
+
+        document.save("characterDocument.txt");
+
+        File file = new File("characterDocument.txt");
+
+        assertTrue(file.exists());
+
+    }
 
 
 
