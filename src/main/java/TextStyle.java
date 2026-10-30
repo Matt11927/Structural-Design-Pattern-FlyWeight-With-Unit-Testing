@@ -10,7 +10,9 @@ public class TextStyle {
         this.textSize = textSize;
     }
 
-
+    public String getTextFont(){ return textFont; }
+    public String getTextColor(){ return textColor; }
+    public int getTextSize(){ return textSize; }
 
 
 }
