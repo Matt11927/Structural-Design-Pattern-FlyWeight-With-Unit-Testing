@@ -9,4 +9,11 @@ public class Document {
     public Character getCharacter( int index ){ return characters.get( index ); }
 
 
+    public int getCharacterCount() {
+        int counter = 0;
+        for ( int i = 0; i < characters.size() ; i++ ){
+            counter++;
+        }
+        return counter;
+    }
 }
